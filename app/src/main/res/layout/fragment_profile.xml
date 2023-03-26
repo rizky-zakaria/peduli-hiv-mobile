@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.ProfileFragment">
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:background="@drawable/topbar_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="30dp"
+            android:id="@+id/img_profile"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_baseline_person_24"
+            app:civ_border_color="#FFF"
+            app:civ_border_width="0.3dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"/>
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="Dokter Siank"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/username"
+            android:text="doktersiangk_"
+            android:textColor="#FFF"
+            android:layout_below="@id/nama"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#ECECEC"
+        android:layout_below="@id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:background="@drawable/bg_field_profile"
+            android:layout_marginTop="50dp"
+            android:paddingHorizontal="25dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--            <ImageView-->
+<!--                android:id="@+id/img_user"-->
+<!--                android:src="@drawable/ic_baseline_person_24_grey"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="75dp"/>-->
+
+            <TextView
+                android:id="@+id/email"
+                android:textSize="18sp"
+                android:text="Edit Username"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_baseline_chevron_right_24"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="@drawable/bg_field_profile"
+            android:layout_marginTop="15dp"
+            android:paddingHorizontal="25dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--            <ImageView-->
+<!--                android:id="@+id/img_pass"-->
+<!--                android:src="@drawable/ic_baseline_lock_24"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="75dp"/>-->
+
+            <TextView
+                android:id="@+id/nik"
+                android:textSize="18sp"
+                android:text="Edit Password"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_baseline_chevron_right_24"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="@drawable/bg_field_profile"
+            android:layout_marginTop="15dp"
+            android:paddingHorizontal="25dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/img_user"-->
+            <!--                android:src="@drawable/ic_baseline_person_24_grey"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="75dp"/>-->
+
+            <TextView
+                android:id="@+id/noregnas"
+                android:textSize="18sp"
+                android:text="Edit Username"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_baseline_chevron_right_24"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"/>
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/btnLogout"
+            android:text="Logout"
+            android:textSize="18sp"
+            android:textColor="#FFF"
+            android:background="@drawable/bg_btn_profile"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

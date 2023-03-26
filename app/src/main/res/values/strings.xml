@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Consult-app</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="efek">
+        <item>R (Ruam Kulit)</item>
+        <item>Mua (Mual)</item>
+        <item>Mun (Muntah)</item>
+        <item>D (Diare)</item>
+        <item>N (Neuropati)</item>
+        <item>Ikt (Ikterus)</item>
+        <item>An (Ahemi)</item>
+        <item>Li (Lelah)</item>
+        <item>Sk (Sakit Kepala)</item>
+        <item>Dem (Demam)</item>
+        <item>Hp (Hippertensi)</item>
+        <item>Dep (Depresi)</item>
+        <item>P (Pankretitis)</item>
+        <item>Up (Upodistropi)</item>
+        <item>Ngan (Mengantuk)</item>
+        <item>Ln (Lain-lain)</item>
+    </string-array>
+    <string-array name="bulan">
+        <item>Januari</item>
+        <item>Februari</item>
+        <item>Maret</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Agustus</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Desember</item>
+    </string-array>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FormatFormFragment">
+
+    <ImageView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:id="@+id/imgHolder"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:text="Pilih Gambar"
+        android:textColor="#FFF"
+        android:layout_above="@id/kirim"
+        android:id="@+id/pilih"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn_primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_alignParentBottom="true"
+        android:text="Kirim"
+        android:id="@+id/kirim"
+        android:textColor="#FFF"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn_primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
