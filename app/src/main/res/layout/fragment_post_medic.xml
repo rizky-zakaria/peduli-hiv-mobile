@@ -41,12 +41,47 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="- nama obat"
-                    android:id="@+id/namaObat"
-                    android:textSize="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:background="@drawable/bg_card_obat"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textColor="#FFF"
+                        android:text="Nama Obat: Bodrex"
+                        android:id="@+id/namaObat"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="#FFF"
+                        android:text="Jumlah Obat: Bodrex"
+                        android:id="@+id/jumlahObat"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="#FFF"
+                        android:text="Dosis Obat: 1 x 1"
+                        android:id="@+id/dosis"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="#FFF"
+                        android:text="Waktu Minum:12.30"
+                        android:id="@+id/waktu"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,50 +104,11 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til2"
-                android:layout_below="@id/til1"
-                android:layout_marginTop="10dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:paddingHorizontal="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:hint="Terlewati :"
-                    android:inputType="text"
-                    android:id="@+id/terlewati"
-                    android:textSize="15sp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_below="@+id/til2"
-                android:id="@+id/til3"
-                android:layout_marginTop="10dp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:paddingHorizontal="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Spinner
-                    android:background="@drawable/bg_spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="65dp"
-                    android:id="@+id/bulan"
-                    android:entries="@array/bulan"
-                    android:padding="15dp">
-
-                </Spinner>
-
-            </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@id/til3"
+                android:layout_below="@id/til1"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_primary"
