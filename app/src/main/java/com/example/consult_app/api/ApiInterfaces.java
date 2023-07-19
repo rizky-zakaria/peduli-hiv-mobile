@@ -4,6 +4,7 @@ import com.example.consult_app.model.ResponseAlarm;
 import com.example.consult_app.model.ResponseBiodata;
 import com.example.consult_app.model.ResponseChat;
 import com.example.consult_app.model.ResponseCluster;
+import com.example.consult_app.model.ResponseDetailKonsumsi;
 import com.example.consult_app.model.ResponseHistori;
 import com.example.consult_app.model.ResponseImage;
 import com.example.consult_app.model.ResponseKondisi;
@@ -45,9 +46,7 @@ public interface ApiInterfaces {
     @POST("api/laporan-konsumsi")
     Call<ResponseKonsumsi> postKonsumsi(
             @Field("id") String id,
-            @Field("konsumsi") String konsumsi,
-            @Field("terlewati") String terlewati,
-            @Field("periode") String periode
+            @Field("konsumsi") String konsumsi
     );
 
     @FormUrlEncoded
@@ -74,11 +73,14 @@ public interface ApiInterfaces {
     @FormUrlEncoded
     @POST("api/laporan-perjalanan")
     Call<ResponseLokasi> postLokasi(
-            @Field("id") String id,
-            @Field("tgl_kunjungan") String tgl_kunjungan,
-            @Field("tgl_pulang") String tgl_pulang,
             @Field("tujuan") String tujuan,
-            @Field("keterangan") String keterangan
+            @Field("id") String id
+    );
+
+    @FormUrlEncoded
+    @POST("api/get-detail-obat")
+    Call<ResponseDetailKonsumsi> getDetailObat(
+            @Field("id") String id
     );
 
     @FormUrlEncoded
@@ -94,16 +96,6 @@ public interface ApiInterfaces {
     );
 
     @FormUrlEncoded
-    @POST("api/LokasiController")
-    Call<ResponseLokasi> insertLokasi(
-            @Field("provinsi") String provinsi,
-            @Field("kabupaten") String kabupaten,
-            @Field("kecamatan") String kecamatan,
-            @Field("desa") String desa,
-            @Field("user_id") String user_id
-            );
-
-    @FormUrlEncoded
     @POST("api/ChatController/image")
     Call<ResponseImage> imagePost(
             @Field("image") String image,
@@ -111,8 +103,13 @@ public interface ApiInterfaces {
             @Field("id") String id
     );
 
-    @GET("api/LokasiController")
-    Call<ResponseLokasi> logGet(
+    @GET("api/get-keluhan")
+    Call<ResponseKondisi> getKeluhan(
+      @Query("id") String id
+    );
+
+    @GET("api/get-data-obat")
+    Call<ResponseObat> getDataObat(
             @Query("id") String id
     );
 

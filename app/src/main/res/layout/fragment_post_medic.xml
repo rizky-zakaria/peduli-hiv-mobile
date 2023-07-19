@@ -68,7 +68,7 @@
                     <TextView
                         android:textColor="#FFF"
                         android:text="Dosis Obat: 1 x 1"
-                        android:id="@+id/dosis"
+                        android:id="@+id/dosisObat"
                         android:textSize="15sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
@@ -76,7 +76,7 @@
                     <TextView
                         android:textColor="#FFF"
                         android:text="Waktu Minum:12.30"
-                        android:id="@+id/waktu"
+                        android:id="@+id/waktuMinum"
                         android:textSize="15sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>

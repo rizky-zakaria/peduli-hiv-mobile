@@ -6,16 +6,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.consult_app.R;
-import com.example.consult_app.fragment.ChatFragment;
 import com.example.consult_app.fragment.DashboardFragment;
-import com.example.consult_app.fragment.GoesFragment;
-import com.example.consult_app.fragment.MedkitFragment;
 import com.example.consult_app.fragment.NotifikasiFragment;
 import com.example.consult_app.fragment.OptionalChatFragment;
 import com.example.consult_app.fragment.ProfileFragment;

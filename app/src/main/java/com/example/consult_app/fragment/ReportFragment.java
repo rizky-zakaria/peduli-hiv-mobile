@@ -24,7 +24,6 @@ public class ReportFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_report, container, false);
 
-        cardPerjalanan = v.findViewById(R.id.cardPerjalanan);
         cardKondisi = v.findViewById(R.id.cardKondisi);
         cardAlarm = v.findViewById(R.id.cardAlarm);
         cardKonsumsi = v.findViewById(R.id.cardKonsumsi);
@@ -45,16 +44,6 @@ public class ReportFragment extends Fragment {
                 fragmentManager = getActivity().getSupportFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.frame_layout, new AlarmFragment())
-                        .commit();
-            }
-        });
-
-        cardPerjalanan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fragmentManager = getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.frame_layout, new GoesFragment())
                         .commit();
             }
         });

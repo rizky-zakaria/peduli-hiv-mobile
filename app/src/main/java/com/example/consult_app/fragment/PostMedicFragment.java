@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.consult_app.R;
 import com.example.consult_app.api.ApiInterfaces;
 import com.example.consult_app.api.ApiServer;
+import com.example.consult_app.model.ResponseDetailKonsumsi;
 import com.example.consult_app.model.ResponseKonsumsi;
 import com.example.consult_app.model.ResponseObat;
 import com.example.consult_app.utils.SharedPrefManager;
@@ -28,13 +29,12 @@ import retrofit2.Response;
 
 public class PostMedicFragment extends Fragment {
 
-    private EditText jumlah, terlewati;
-    private Spinner periode;
-    String sJumlah, sTerlewati, sPeriode, id;
+    private EditText jumlah;
+    String sJumlah, id;
     SharedPrefManager sharedPrefManager;
     FragmentManager fragmentManager;
     AppCompatButton btnKirim;
-    TextView textView;
+    TextView textView, namaObat, jumlahObat, dosisObat, waktuMinum;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,19 +44,19 @@ public class PostMedicFragment extends Fragment {
 
         sharedPrefManager = new SharedPrefManager(getContext());
         jumlah = view.findViewById(R.id.jumlah);
-        terlewati = view.findViewById(R.id.terlewati);
-        periode = view.findViewById(R.id.bulan);
+        jumlahObat = view.findViewById(R.id.jumlahObat);
+        dosisObat = view.findViewById(R.id.dosisObat);
+        waktuMinum = view.findViewById(R.id.waktuMinum);
+        namaObat = view.findViewById(R.id.namaObat);
 
         btnKirim = view.findViewById(R.id.btnKirim);
         btnKirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sJumlah = jumlah.getText().toString();
-                sTerlewati = terlewati.getText().toString();
-                sPeriode = periode.getSelectedItem().toString();
                 id = sharedPrefManager.getSpId();
 //                Toast.makeText(getContext(), sJumlah+sTerlewati+sPeriode, Toast.LENGTH_SHORT).show();
-                postKonsumsi(id, sJumlah, sTerlewati, sPeriode);
+                postKonsumsi(id, sJumlah);
             }
         });
 
@@ -69,31 +69,31 @@ public class PostMedicFragment extends Fragment {
 
     private void getNamaObat(String spId) {
         ApiInterfaces apiInterfaces = ApiServer.konekRetrofit().create(ApiInterfaces.class);
-        Call<ResponseObat> call = apiInterfaces.getObat(spId);
-        call.enqueue(new Callback<ResponseObat>() {
+        Call<ResponseDetailKonsumsi> call = apiInterfaces.getDetailObat(spId);
+        call.enqueue(new Callback<ResponseDetailKonsumsi>() {
             @Override
-            public void onResponse(Call<ResponseObat> call, Response<ResponseObat> response) {
+            public void onResponse(Call<ResponseDetailKonsumsi> call, Response<ResponseDetailKonsumsi> response) {
+                Toast.makeText(getContext(), response.body().getSuccess(), Toast.LENGTH_SHORT).show();
                 if (response.isSuccessful()){
-                    Log.d("NAMA OBAT", "onResponse: "+response.body().getData());
-                    for (int i = 0; i < response.body().getData().size(); i++){
-                        Log.d("OBAT", "onResponse: "+response.body().getData().get(i).getNama());
-                        textView.setText(response.body().getData().get(i).getNama());
-                    }
+                    textView.setText("Nama Obat: "+response.body().getData().getNama());
+                    jumlahObat.setText("Jumlah Obat: "+response.body().getData().getJumlah());
+                    dosisObat.setText("Dosis Obat: "+response.body().getData().getDosis());
+                    waktuMinum.setText("Waktu Minum: "+response.body().getData().getJam()+":"+response.body().getData().getMenit());
                 }else {
                     Toast.makeText(getContext(), "Obat tidak ditemukan", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<ResponseObat> call, Throwable t) {
+            public void onFailure(Call<ResponseDetailKonsumsi> call, Throwable t) {
                 Toast.makeText(getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void postKonsumsi(String id, String sJumlah, String sTerlewati, String sPeriode) {
+    private void postKonsumsi(String id, String sJumlah) {
         ApiInterfaces apiInterfaces = ApiServer.konekRetrofit().create(ApiInterfaces.class);
-        Call<ResponseKonsumsi> call = apiInterfaces.postKonsumsi(id, sJumlah, sTerlewati, sPeriode);
+        Call<ResponseKonsumsi> call = apiInterfaces.postKonsumsi(id, sJumlah);
         call.enqueue(new Callback<ResponseKonsumsi>() {
             @Override
             public void onResponse(Call<ResponseKonsumsi> call, Response<ResponseKonsumsi> response) {

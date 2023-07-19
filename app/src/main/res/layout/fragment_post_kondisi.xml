@@ -48,7 +48,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:visibility="gone"
+            android:layout_marginTop="20dp"
+            android:visibility="visible"
             android:layout_below="@id/cd1"
             android:layout_marginHorizontal="10dp"
             android:id="@+id/cd2"
@@ -61,7 +62,7 @@
 
             <TextView
                 android:textColor="#FFF"
-                android:text="Dosis Obat: 1 x 1"
+                android:text="Berat: 90KG"
                 android:id="@+id/berat2"
                 android:textSize="15sp"
                 android:layout_width="wrap_content"
@@ -69,7 +70,7 @@
 
             <TextView
                 android:textColor="#FFF"
-                android:text="Dosis Obat: 1 x 1"
+                android:text="Efek: Muntaber"
                 android:id="@+id/efek2"
                 android:textSize="15sp"
                 android:layout_width="wrap_content"
@@ -77,7 +78,7 @@
 
             <TextView
                 android:textColor="#FFF"
-                android:text="Waktu Minum:12.30"
+                android:text="Keluhan: Muntah-muntah"
                 android:id="@+id/keluhan2"
                 android:textSize="15sp"
                 android:layout_width="wrap_content"
